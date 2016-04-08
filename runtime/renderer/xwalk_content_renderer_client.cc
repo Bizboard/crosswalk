@@ -121,6 +121,7 @@ void XWalkContentRendererClient::RenderThreadStarted() {
 
   blink::WebString application_scheme(
       base::ASCIIToUTF16(application::kApplicationScheme));
+  blink::WebSecurityPolicy::registerURLSchemeAsAllowingServiceWorkers("file");
   blink::WebSecurityPolicy::registerURLSchemeAsSecure(application_scheme);
   blink::WebSecurityPolicy::registerURLSchemeAsCORSEnabled(application_scheme);
 #if defined(OS_ANDROID)
