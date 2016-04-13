@@ -122,7 +122,8 @@ void XWalkContentRendererClient::RenderThreadStarted() {
  const char fileTestScheme[] = "file";
  blink::WebString test_scheme(
      base::ASCIIToUTF16(fileTestScheme));
-
+     
+ blink::WebSecurityPolicy::registerURLSchemeAsLocal(content_scheme);
  blink::WebSecurityPolicy::registerURLSchemeAsAllowingServiceWorkers(test_scheme);
    blink::WebSecurityPolicy::registerURLSchemeAsSecure(test_scheme);
    blink::WebSecurityPolicy::registerURLSchemeAsCORSEnabled(test_scheme);
