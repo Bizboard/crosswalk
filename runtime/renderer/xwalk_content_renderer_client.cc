@@ -119,13 +119,11 @@ void XWalkContentRendererClient::RenderThreadStarted() {
     extension_controller_.reset(
         new extensions::XWalkExtensionRendererController(this));
 
- const char fileTestScheme[] = "file";
- blink::WebString file_scheme(
-     base::ASCIIToUTF16(fileTestScheme));
+  const char fileScheme[] = "file";
+  blink::WebString file_scheme(
+      base::ASCIIToUTF16(fileScheme));
 
    blink::WebSecurityPolicy::registerURLSchemeAsAllowingServiceWorkers(file_scheme);
-   blink::WebSecurityPolicy::registerURLSchemeAsSecure(file_scheme);
-   blink::WebSecurityPolicy::registerURLSchemeAsCORSEnabled(file_scheme);
 
   blink::WebString application_scheme(
       base::ASCIIToUTF16(application::kApplicationScheme));

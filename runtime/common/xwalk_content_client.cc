@@ -225,4 +225,9 @@ std::string XWalkContentClient::GetProcessTypeNameInEnglish(int type) {
   return "Unknown";
 }
 
+void XWalkContentClient::AddServiceWorkerSchemes(
+    std::set<std::string>* service_worker_schemes) {
+  service_worker_schemes->insert(url::kFileScheme);
+}
+
 }  // namespace xwalk

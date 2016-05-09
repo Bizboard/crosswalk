@@ -38,6 +38,10 @@ class XWalkContentClient : public content::ContentClient {
       std::vector<std::string>* saveable_shemes) override;
   std::string GetProcessTypeNameInEnglish(int type) override;
 
+ protected:
+  void AddServiceWorkerSchemes(
+      std::set<std::string>* service_worker_schemes) override;
+
  private:
   DISALLOW_COPY_AND_ASSIGN(XWalkContentClient);
 };
